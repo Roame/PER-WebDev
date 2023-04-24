@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projectiles</title>
+
+	<link rel="stylesheet" href = "/nav.css"/>
+	<link rel="stylesheet" href="/educational/physics/body.css">
+
+	<script id="MathJax-script" async src="/technical/MathJax/tex-chtml.js"></script>
+
+	<script src="/technical/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $("#nav_div").load("/nav_chunk.html");
+      $("#fav_div").load("/fav_chunk.html"); 
+    });
+	</script>
+
+	<div id="fav_div"></div>
+</head>
+<body>
+	<div id="nav_div"></div>
+	<div id="spacer"></div>
+	<div id="info">
+		<h1>Projectiles</h1>
+		<br/>
+		<p>Projectiles commonly comes up on the topic of motion. Projectiles are objects that have been launched into the air and follow some kind of trajectory (for example, if you throw a tennis ball, the ball is the projectile and the path it takes is its trajectory). If you are unfamiliar with motion in two dimensions, this can seem daunting. It might seem odd that we are only going to work with two dimensions (after all, real life is 3D), but the only directions a projectile moves in is up and down (as it rises and falls), and forwards (presumably towards some kind of target). We can ignore the extra dimension because typically they don't move side-to-side.</p>
+		<br/>
+		<h2>Approaching Projectile Problems</h2>
+		<p>With trajectories, often you'll be given the projectile's initial speed and the direction the speed is in (i.e. the velocity of the object). Furthermore, drag is often considered to be negligible (we can just ignore it). You will then have to break the velocity into its components, being velocity in the y-direction (\(v_y\), being up and down), and the x-direction (\(v_x\), which will be the forwards velocity). This involves some trig:</p>
+		<br/>
+		<img src="VecDecomp.png" width="25%" style="display: block; margin:auto;">
+		<p>
+		\[v_{0,x} = v_0 \cos(\theta) \]
+		\[v_{0,y} = v_0 \sin(\theta) \]
+		</p>
+		<p>If you read the article on vectors, the two equations above will look familiar. We can use our equations of motions for both the y and x directions. The y-direction has a constant acceleration (gravity \(g= 9.8 \ m/s^2\)), an initial velocity \(v_{0,y}\), and an initial height (\(y_0\), which sometimes is just 0 and we can just ignore it). The x-direction is slightly different. We still have an initial velocity \(v_{0,x}\), and an initial position (\(x_0\)), but there is no acceleration term (gravity only acts vertically). These two scenarios results in two equation:
+		\[y(t) = -{1\over2}gt^2+v_{0,y}t+y_0\]
+		\[x(t) = v_{0,x}t+x_0\]</p>
+		<p>Here, \(g=+9.8 \ m/s^2\). We now have two equations, each one dealing with a specific direction the projectile is traveling in. From here you will have to use these equations to find what the problem is asking you to solve for. Below are some scenarios and how you would handle them:</p>
+		<br/>
+		<h3>Time of Flight (TOF)</h3>
+		<p>The problem may ask you how long it takes for the object to hit the ground. You will be given an initial height and often the ground will just be at \(y=0\). For these problems you don't need to worry about the x-direction. Going back to our equation for y: \(y(t) = -{1\over2}gt^2+v_{0,y}t+y_0\), we set this whole equation to 0 (because the ground is at \(y=0\)), and use the quadratic formula to solve for t:
+		\[t = {-v_{0,y} \pm \sqrt{v_{0,y}^2-4(-{1\over2}g)(y_0)} \over 2(-{1\over2}g)}\] 
+		
+		\[t= {v_{0,y} \pm \sqrt{v_{0,y}^2+2gy_0} \over g}\]</p>
+
+		<p>This will give you two answers for t, but only one makes sense. Negative values of t (or if t=0) would indicate that the object hit the ground before it was even launched. To avoid this, we just change the \(\pm\) to a \(+\) to ensure we get a logical answer: </p>
+		\[ \boxed{t= {v_{0,y} + \sqrt{v_{0,y}^2+2gy_0} \over g}}\]
+		<br/>
+		<h3>Max Range of a Projectile</h3>
+		<p>If you want to find the max distance the projectile travels, you need to first figure out how long it took to hit the ground, and then use that time to figure out how far in the x-direction it traveled during that time. We can use the the equation for t found in the last section to get the TOF: \(t= (v_{0,y} + \sqrt{v_{0,y}^2+2gy_0})/g\), then plug that value of t into our equation for x: \( \Delta x = v_{0,x}t\). I've removed \(x_0\) because we are looking for the change in position, not what the final position actually is.</p>
+		<p>If the projectile is launched from \(y=0\) and lands at \(y=0\), then there is a useful formula/shortcut that will give you the max range:
+		\[ x_{max} = {v_0^2 \sin{(2\theta)} \over g}\]</p>
+		<br/>
+		<h3>Max Height of a Projectile</h3>
+		<p>If you want to know the max height of the projectile, you will need to find the maximum of the y(t) parabola. Recall that this is when \(t={-b\over2a}={v_{0,y} \over g}\). Plugging this into our equation for y yields:
+		\[y_{max} = {v_{0,y}^2\over 2g} + y_0 \]
+		\[y_{max} = {v_0^2\sin^2{\theta}\over 2g} + y_0\]</p>
+		<br/>
+
+		<h2>Visualizing Trajectories</h2>
+		<p>To do this, we want to get our equation for y(t) in terms of x (i.e. y(x)), so that we can plug it into a graphing calculator to draw the trajectory for us. To do this, we rearrange x(t), solving for t, and then substituting this into y(t). For simplicity, I'm going to assume \(x_0 = 0 \)
+
+		\[x = v_{0,x}t\]
+		\[{x\over v_{0,x}} = t\]
+		<br/>
+		\[y(t) = -{1\over2}gt^2+v_{0,y}t+y_0\]
+		\[y(x) = -{1\over2}g{x^2\over v_{0,x}^2}+v_{0,y}{x\over v_{0,x}}+y_0\]
+		\[ \boxed{y(x) = \left({ -g \over 2v_0^2\cos^2\theta}\right) x^2
+		+ (\tan\theta)x + y_0} \]
+		</p>
+
+		<p>For example, setting our initial conditions to be \(v_0=5 \ m/s^2\), \(\theta=45^{\circ} \), and \(y_0=1 \ m \) results in this graph:</p>
+		<br/>
+		<img src="TrajectoryGraph.png" width="80%" style="display:block; margin:auto;">
+		<br/>
+		<p>From this I can estimate that the projectile has a max height of 1.6 m which occurs at a distance of 1.25 m, and travels a total of 3.3 m</p>
+		<br/>
+	</div>
+</body>
+</html>

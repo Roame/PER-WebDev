@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Forces</title>
+
+	<link rel="stylesheet" href = "/nav.css"/>
+	<link rel="stylesheet" href="/educational/physics/body.css">
+
+	<script id="MathJax-script" async src="/technical/MathJax/tex-chtml.js"></script>
+
+	<script src="/technical/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $("#nav_div").load("/nav_chunk.html");
+      $("#fav_div").load("/fav_chunk.html"); 
+    });
+	</script>
+
+	<div id="fav_div"></div>
+</head>
+<body>
+	<div id="nav_div"></div>
+	<div id="spacer"></div>
+	<div id="info">
+		<h1>Forces</h1>
+		<br/>
+		<p>Forces are often described as either "push" or a "pull" (you've probably heard that before). When you lift something up, you are exerting a force on it to move it. Gravity is exerting a force on that object, pulling it downwards. From the moment you sit up in the morning to the moment you go to bed, you are constantly exerting and experiencing forces. This article will serve to formalize the concept of a "force" and how it can be expressed mathematically.</p>
+		<br/>
+
+		<h2>Newton's Laws of Motion</h2>
+		<h3>Newton's First Law</h3>
+		<p><em>Every body continues in its state of rest, or of uniform motion in a straight line, unless it is compelled to change that state by forces impressed upon it.</em></p>
+		<p>Paraphrased: "an object in motion stays in motion and an object at rest stays at rest unless a net force acts on it." For example, if I take my cup and I set it on my desk, then it will probably sit there until I clumsily knock it off. What's important here is that there is not <em>net</em> force. The cup still experiences gravity, but the force of gravity is cancelled out by the desk pushing upwards, supporting the cup (this is called a "normal" force). Me knocking over the cup introduces a new force, being my acting against cup. This force isn't canceled, and thus we get motion.</p>
+		<br/>
+
+		<h3>Newton's Second Law</h3>
+		<p><em>The change of motion of an object is proportional to the force impressed; and is made in the direction of the straight line in which the force is impressed</em></p>
+		<p>This one is a bit less clear. It is saying that the larger the force acting on an object, the greater the resulting acceleration will be. Mathematically this is written as \(F=ma\). Here, F is the force, a is acceleration, and m is this proportionality constant, which we call mass. If m is held constant, increasing a increases F (and vice versa). Likewise decreasing a, decreases F (and vice versa).</p>
+		<br/>
+
+		<h3>Newton's Third Law</h3>
+		<p><em>To every action there is always opposed an equal reaction; or, the mutual actions of two bodies upon each other are always equal, and directed to contrary parts.</em></p>
+		<p>Imagine you're pushing really heavy furniture. If you push really hard, the furniture will move a little, but at the same time you will be pushed backwards. This is Newton's third law. The force that you applied to the furniture is also being applied to you. Equal forces, but in opposite directions.</p>
+		<br/>
+
+		<h2>The Force Equation</h2>
+		<p>Most introductory physics courses will spend quite a bit of time working with the force equation \(F=ma\). Below is a more accurate restatement of Newton's second law: 
+		\[\Sigma \vec{F} = m\vec{a}\]</p>
+		<p>What this statement says is that the net force (measured in Newtons and abbreviated 'N') acting on an object is equal to the product of the object's mass (measured in kilograms and abbreviated 'kg') and it's resulting acceleration (measured in m/s^2). Force and acceleration are both vector quantities. Below are some examples to help illustrate how this equation works</p>
+
+		<br/>
+		<h3>1D Example</h3>
+		<br/>
+		<p>A block is at rest on a flat, perfectly smooth surface. It has a mass of 3 kg and a constant force of 6 N acts on one of its sides, parallel to the surface. How far will it travel in 4 seconds?</p>
+		<br/>
+		<p>Here there is essentially one force acting on the block. You could argue that gravity is pulling the block down and the surface is pushing up with an equal force, thus canceling out and having no effect. Then again, I never explicity said there was gravity to begin with. Regardless, there is one force (6 N), and the block has a mass of 3 kg, thus \(F=ma \Rightarrow a=F/m={6 \ N \over 3 \ kg} = 2 \ {m \over s^2}\). Now that we know the accleration, initial velocity (0 m/s, as the problem states that the block is at rest initially), and the elapsed time, we can determine \(\Delta x\):
+		\[\Delta x = {1\over2}at^2+v_0t\]
+		\[\Delta x = {1\over2}(2)(4)^2+(0)(4)\]
+		\[\Delta x = (4)^2\]
+		\[\Delta x = 16 \ m\]</p>
+		<h3>2D Example</h3>
+		<br/>
+
+		<h3>Inertia and Mass</h3>
+		<p>So far I have neglected to address inertia and mass. Newton's first law deals directly with the concept of inertia. Inertia is a property of matter where it has a tendency to continue with it's current state of motion and will resist changes to that state. Trying to slow down a runaway train is a good example. The inertia of the train makes slowing it down very difficult.</p>
+		<p>Mass is a measure of inertia. Typically it is measured in kilograms (abbreviated 'kg'). An object that exhibits more inertia is considered to have more mass. This should not be confused with weight. Weight is what we experience as a result of gravity acting on an object. Weight is a <em>force</em>, and is not a measure of inertia.</p>
+		
+		<br/>
+		<p></p>
+		<br/>
+	</div>
+</body>
+</html>

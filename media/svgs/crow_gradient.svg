@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="56.620796mm"
+   height="51.465317mm"
+   viewBox="0 0 56.620796 51.465317"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="crow_gradient.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="2.0359279"
+     inkscape:cx="179.52502"
+     inkscape:cy="123.5309"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1497">
+      <stop
+         style="stop-color:#8f008f;stop-opacity:1;"
+         offset="0"
+         id="stop1493" />
+      <stop
+         style="stop-color:#8f008f;stop-opacity:0;"
+         offset="1"
+         id="stop1495" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1497"
+       id="linearGradient1499"
+       x1="134.92813"
+       y1="161.25269"
+       x2="86.153702"
+       y2="130.19295"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-91.132584,-115.89651)">
+    <path
+       style="fill:url(#linearGradient1499);fill-opacity:1;stroke-width:0.352778"
+       d="m 123.65161,166.03891 c -0.45502,-0.7276 -1.26159,-2.06971 -1.79238,-2.98247 -0.53078,-0.91276 -1.28623,-1.76149 -1.67876,-1.88608 -0.39253,-0.12458 -0.95313,-0.80653 -1.24579,-1.51544 -0.8474,-2.05272 -1.44394,-2.52364 -3.19681,-2.52364 -1.3332,0 -1.98371,0.29344 -4.35505,1.96457 -1.53326,1.08052 -2.78774,1.7792 -2.78774,1.55262 0,-0.82026 1.16781,-2.84654 2.0326,-3.52679 l 0.88477,-0.69596 h -0.91635 c -0.59658,0 -2.6752,1.25338 -5.9566,3.59174 -5.377116,3.8318 -6.692176,4.49332 -8.920806,4.48748 -1.66893,-0.004 -4.58611,-1.04382 -4.58611,-1.6341 0,-0.22768 1.74625,-1.63066 3.88055,-3.11773 2.13431,-1.48709 3.48368,-2.59855 2.99861,-2.46993 -1.67061,0.44297 -4.76419,0.61644 -5.55961,0.31176 -0.69893,-0.26773 1.74409,-2.08594 19.832306,-14.76019 l 20.62943,-14.45486 0.0114,-1.98528 c 0.007,-1.1747 -0.16861,-2.13175 -0.42954,-2.34402 -0.24253,-0.19731 -2.09407,-0.8512 -4.11453,-1.45309 -2.02044,-0.60189 -3.74176,-1.16257 -3.82513,-1.24594 -0.49672,-0.49672 5.07068,-2.32028 7.08391,-2.32028 0.75915,0 1.36437,-0.38301 2.33685,-1.47886 1.24833,-1.40669 1.42558,-1.48608 3.63171,-1.62655 3.1588,-0.20114 5.56929,0.62796 7.532,2.59067 2.32968,2.32968 2.61284,3.7435 2.61284,13.04595 0,6.64305 -0.10519,8.22831 -0.70039,10.55551 -1.97255,7.71262 -8.38767,13.36073 -16.1554,14.22384 l -2.34239,0.26027 -0.64312,2.11365 -0.64311,2.11365 2.12832,3.07124 c 1.17057,1.68918 2.12831,3.15897 2.12831,3.26621 0,0.10723 -0.59531,0.19217 -1.32292,0.18874 -1.28659,-0.006 -1.3883,-0.10581 -3.70416,-3.63256 -1.98691,-3.0258 -2.38125,-3.87188 -2.38125,-5.10905 0,-1.52612 -0.25141,-1.79576 -0.98778,-1.05938 -1.01885,1.01885 -0.48047,2.848 1.87498,6.37033 l 2.29832,3.43689 h -1.41195 c -1.24932,0 -1.50723,-0.15237 -2.23926,-1.32292 z m 15.65832,-44.5506 c 1.32178,-0.70739 0.64452,-2.80981 -0.90513,-2.80981 -1.4856,0 -2.09867,1.5551 -1.03314,2.62064 0.65008,0.65007 1.01122,0.68532 1.93827,0.18917 z"
+       id="path961"
+       inkscape:export-filename="C:\Apache24\htdocs\media\crow_gradient.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </g>
+</svg>

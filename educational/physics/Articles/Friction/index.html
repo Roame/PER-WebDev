@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Friction</title>
+
+	<link rel="stylesheet" href = "/nav.css"/>
+	<link rel="stylesheet" href="/educational/physics/body.css">
+
+	<script id="MathJax-script" async src="/technical/MathJax/tex-chtml.js"></script>
+
+	<script src="/technical/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $("#nav_div").load("/nav_chunk.html");
+      $("#fav_div").load("/fav_chunk.html"); 
+    });
+	</script>
+
+	<div id="fav_div"></div>
+</head>
+<body>
+	<div id="nav_div"></div>
+	<div id="spacer"></div>
+	<div id="info">
+		<h1>Friction</h1>
+		<br/>
+		<p>Friction is a force that objects rubbing up against each other feel. If you firmly press your hand against a surface and try and slide it around, you'll feel a resistance to this motion (and according to Newton's third law, an equal and opposite force will be exerted on that surface). The harder you press, the more resistance you'll feel. Furthermore, if it's a rough surface, you'll experience more friction than if it was a perfectly smooth surface. The phenomenon can be quantified, as shown below.</p>
+		<br/>
+		<h2>The Normal Force</h2>
+		<p>Before we can tackle friction, we first have to understand what a "normal" force is. The term <b>normal</b> means orthogonal (or perpendicular) to. If I apply a force <em>normal</em> to some surface, then that means I am applying it directly towards the surface, and am not applying it at some angle.</p>
+		<br/>
+		<img src="NormalForce.png" width="280px", style="display:block; margin:auto;">
+		<br/>
+		<p>The symbol \(\vec{N}\) is often used to denote a normal force. It has some magnitude and is directed towards a surface.</p>
+		<br/>
+		<h2>The Math of Friction</h2>
+		<h3>Magnitude</h3>
+		<p>Turns out there are actually two key equations for determining the force of friction on an object: one for static friction (no movement), and one for kinetic friction (sliding against a surface):</p>
+		<br/>
+		<p style="border: solid; border-width: 2px; display: block; width:100px; margin:auto; text-indent: 0; text-align: center;">
+			\(f_s \le \mu_s N\) <br/>
+			\(f_k = \mu_k N\)
+		</p>
+		<br/>
+		<p>f is the magnitude of the frictional force, while N is the magnitude of the normal force. Subscripts s and k indicate "static" and "kinetic". The symbol \(\mu\) (pronounced "mew" or "mu") is called the <b>coefficient of friction</b> and it's value depends on both of the materials coming into contact with each other. For example, rubber against wood is different from rubber against rubber, which is also different from wood against wood. Furthermore, the friction between two surfaces changes depending on whether they are simply statically touching each other or if they are sliding against each other, hence why we need two equations: one for static friction and one for kinetic friction. The value for \(\mu_s\) and \(\mu_k\) typically ranges from 0 to 1. Physics problems involving friction often give you these coefficients beforehand.</p>
+		<br/>
+		<h3>Direction</h3>
+		<p>Friction always acts parallel to the surface. In the case of kinetic friction, it is in the direction opposite that of the motion (If you slide a box across some surface to the right, the friction, will be acting to the left). For static friction, the frictional force acts in the direction opposite that of any net applied force that may cause the object to begin moving (If you are pushing on a piece of furniture, static friction will match the applied force, but act in the opposite direction, canceling out the force you are applying).</p>
+		<br/>
+		<img src="StaticVKinetic.png" height="200px" style="display:block;margin:auto;" />
+		<br/>
+
+		<h3>Transition from Static to Kinetic</h3>
+		<p>Say we have an object at rest sitting on some surface and \(\mu_s\) and \(\mu_k\) have some non-negligible value. If you go to push this object, you'll first be met with static friction. Static friction will match the force that you apply, canceling it out, thus the net force on the object stays at 0 (this is why the equation for static friction has a \(\le\) sign, because it can take on multiple values). If you increase how much force you are applying to be <b>greater than \(\mu_s N\)</b>, then the object will begin to accelerate. You have overcome the initial static friction and now the object can begin to move. At this point the object is sliding on this surface, and thus experiences a kinetic frictional force of \(\mu_k N\) opposing the motion of the object. You will have to match this force in order to keep the object moving, otherwise it will deccelerate and eventually stop moving. </p>
+		<p>\(\mu_k\) is always less than \(\mu_s\). So once you've got the object moving, less force is needed in order to keep it in this state. The graph below helps illustrate this:</p>
+		<br/>
+		<img src="StaticAndKinetic.png" width="400px" style="display:block; margin:auto;" \>
+		<br/>
+		<p>The peak in this graph is where \( W_x=f_s=\mu_s N\). After this point, the friction force levels out at \(f=f_k=\mu_k N\). The green transition zone is often assumed to be very narrow and is ignored.</p>
+		<br/>
+	</div>
+</body>
+</html>

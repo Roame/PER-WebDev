@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Scared Crow</title>
+	<link rel="stylesheet" href = "/nav.css"/>
+	<link rel="stylesheet" href = "../essay_format.css"/>
+
+	<script src="/technical/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $("#nav_div").load("/nav_chunk.html");
+      $("#fav_div").load("/fav_chunk.html"); 
+    });
+	</script>
+
+	<div id="fav_div"></div>
+</head>
+<body>
+	<div id="nav_div"></div>
+	<div id="spacer"></div>
+	<iframe src="TTM_Essay.pdf"></iframe>
+</body>
+</html>

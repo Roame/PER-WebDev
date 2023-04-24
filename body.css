@@ -1,0 +1,25 @@
+#info {
+	width: 50%;
+	min-width: 500px;
+	height: 100%;
+	margin: auto;
+	padding: 10px;
+	padding-top: 20px;
+	position: relative;
+}
+
+#info h1 {
+	font-size: 30px;
+}
+
+#info h2 {
+	font-size: 22px;
+}
+
+#info p {
+	text-indent: 30px;
+}
+
+#info ul {
+	padding-left: 30px;
+}

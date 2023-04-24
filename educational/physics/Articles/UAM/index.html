@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UAM</title>
+
+	<link rel="stylesheet" href = "/nav.css"/>
+	<link rel="stylesheet" href="/educational/physics/body.css">
+	<link rel="stylesheet" href="styles.css">
+
+	<script id="MathJax-script" async src="/technical/MathJax/tex-chtml.js"></script>
+
+	<script src="/technical/jquery.min.js"></script>
+    <script> 
+    $(function(){
+      $("#nav_div").load("/nav_chunk.html");
+      $("#fav_div").load("/fav_chunk.html"); 
+    });
+	</script>
+
+	<div id="fav_div"></div>
+</head>
+<body>
+	<div id="nav_div"></div>
+	<div id="spacer"></div>
+	<div id="info">
+		<h1>Uniformly Accelerated Motion</h1>
+		<br />
+		<p>Uniformly accelerated motion (UAM) refers to motions where the acceleration applied to an object is constant. There are four main equations (often referred to as the "Big Four") that are used in these situations:</p>
+		<br/>
+
+		<h2 style="text-align: center;">The Big Four</h2>
+		<button type="button" class="collapsible">\[ x_f={1 \over 2}at^2+v_0t+x_0 \]</button>
+		<div class="content">
+			<p>This equation was introduced in the 1-dimensional motion article. I will now give the derivation below:</p>
+			<br/>
+			<p>\(v(t) = \int a \ dt \) </p>
+			<p>\(v(t) = at+C \) </p>
+			<p>\(v(0) = a(0)+C = v_0\)</p>
+			<p>\(C = v_0 \)</p>
+			<p>\(v(t) = at+v_0\)</p>
+			<br/>
+			<p>\(x(t) = \int v(t) \ dt\)</p>
+			<p>\(x(t) = \int (at+v_0) \ dt\)</p>
+			<p>\(x(t) = {1 \over 2} at^2+v_0t+C \)</p>
+			<p>\(x(0) = {1 \over 2} a(0)^2+v_0(0)+C = x_0\)</p>
+			<p>\(C = x_0 \)</p>
+			<p>\(x(t) = {1 \over 2} at^2+v_0t + x_0 \)</p>
+			<br />
+			<p>This derivation stems from the fact that acceleration is the time derivative of velocity, which is the time derivative of position. The integration works in reverse, integrating from acceleration to velocity, subbing in initial conditions, and then integrating velocity to get position, again subbing in initial conditions.</p>
+			<br/>
+			<p>x(t) and \(x_f\) are the same thing.</p>
+		</div>
+
+		<button type="button" class="collapsible">\[ x_f=({v_f+v_0 \over 2})t+x_0 \]</button>
+		<div class="content">
+			<p>Derivation:</p>
+			<p>
+				\(v_f = at+v_0 \)<br/> 
+				\(a = {v_f-v_0 \over t}\)
+			</p><br/>
+			<p>Plug our expression for a into \(x(t) = {1 \over 2} at^2+v_0t + x_0 \)...</p>
+			<br/>
+			<p>
+				\(x(t) = {1 \over 2} ({v_f-v_0 \over t})t^2+v_0t + x_0 \)<br/>
+				\(x(t) = {1 \over 2} (v_f-v_0)t+v_0t + x_0 \)<br/>
+				\(x(t) = ({v_f+v_0 \over 2})t + x_0 \)<br/>
+			</p><br/>
+			<p>It is likely more intuitive to think of \( {v_f+v_o \over 2} \) as being the average velocity, so the equation simplifies to \( x_f = v_{avg}t+x_o \)</p>
+		</div>
+
+		<button type="button" class="collapsible">\[ v_f=at+v_0 \]</button>
+		<div class="content">
+			<p>This is derived in the derivation for \(x(t) = {1 \over 2} at^2+v_0t + x_0 \). This equation stems from velocity being the integral of acceleration.</p>
+		</div>
+		<button type="button" class="collapsible">\[ v_f^2=v_o^2+2a(x_f-x_0) \]</button>
+		<div class="content">
+			<p>To obtain this equation, we have to eliminate our t variable. This can be done by combining the last two equations:</p><br/>
+			<p>
+				\(v_f=at+v_0 \)<br/>
+				\(t={v_f-v_o \over a} \)<br/><br/>
+				\(x_f=({v_f+v_0 \over 2})t+x_0, \quad t={v_f-v_o \over a} \)<br/>
+				\(x_f=({v_f+v_0 \over 2})({v_f-v_o \over a}) + x_0 \)<br/>
+				\(x_f=({v_f^2-v_0^2 \over 2a}) + x_0 \)<br/>
+				\(2a(x_f-x_0)=v_f^2-v_0^2\)<br/>
+				\(v_f^2 = 2a(x_f-x_0)+v_0^2\)<br/>
+			</p>
+		</div>
+		<br/>
+
+		<p>a, v, and x are acceleration, velocity, and position respectively. The subscripts f and 0 indicate final and initial value respectively.</p>
+		<p>You can click on each equation in order to see how each one could be derived, but it's probably best to just memorize these as you'll likely be switching between them a lot. Most linear kinematics problems will involve one of the variables above missing and you'll have to know which equation can be used to find that variable with the given information.</p>
+		<br />
+	</div>
+
+
+	<script type="text/javascript">
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+		for(i = 0; i < coll.length; i++){
+			coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if(content.style.display === "block"){
+					content.style.display = "none";
+				} else {
+					content.style.display = "block";
+				}
+			});
+		}
+	</script>
+</body>
+</html>

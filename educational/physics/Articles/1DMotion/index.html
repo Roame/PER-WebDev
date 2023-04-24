@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>1-D Motion</title>
+
+	<link rel="stylesheet" href = "/nav.css"/>
+	<link rel="stylesheet" href="/educational/physics/body.css">
+
+	<script id="MathJax-script" async src="/technical/MathJax/tex-chtml.js"></script>
+
+	<script src="/technical/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $("#nav_div").load("/nav_chunk.html");
+      $("#fav_div").load("/fav_chunk.html"); 
+    });
+	</script>
+
+	<div id="fav_div"></div>
+</head>
+<body>
+	<div id="nav_div"></div>
+	<div id="spacer"></div>
+	<div id="info">
+		<h1>1-Dimensional Motion</h1>
+		<br/>
+		<p>Many problems in physics involves breaking up a problem into multiple 1-dimensional problems to make them easier to tackle</p>
+		<p>One-dimensional motion can be thought of as motion along a straight line. In contrast, 2-dimensional motion would be motion in a plane, and 3-dimensional motion would be motion within a volume. Motion in higher dimensions and can be seen as a combination of 1-dimensional motions along each axis of the space described, but we'll deal with that later.</p>
+		<br/>
+
+		<h2>Position</h2>
+		<p>In this discussion, we'll be using a ball as our object. This ball is only allowed to move in one dimension (e.g. left or right). In order to tell where the ball is, we'll use a number line. If I say that ball is at \(x=2\), then that means the ball is located at the 2 on our number line. Negative numbers are also allowed. Saying that the ball moves from \(x=-3\)  to \(x=2\) can be visualized as moving to the right 5 units. Often in physics we use meters the measure distance (\(1 \ m \approx 3.3 \ ft\)), so in this example we can say that the ball moved 5 meters to the right.</p>
+		<br/>
+		<img src="BallMove.png" style="display: block; margin: auto;">
+		<br/>
+		<p>I mentioned the ball being at some position by stating that \(x=\)(some number). Here I am implying that I am using an x-axis from a traditional cartesian coordinate system (with dimensions x, y, and z) as our number line. The use of the letter x is somewhat arbitrary, but is commonly used in physics for denoting position measurements.</p>
+		<br/>
+
+		<h2>Velocity</h2>
+		<p>Now that we've can visualize what's going on with our hypothetical ball, we can begin to discuss velocity and acceleration. You're probably already well-acquainted with these two concepts, but we'll rehash them here. Velocity is speed with a direction. For example, I can say that the ball is moving at 5 meters per second to the right. 5 meters per second (often written m/s or \(m \over s\)) is the speed of our ball, and stating "to the right" gives us an idea of which direction it is moving in. If our ball starts at \(x=0\) m, one second later it will be at \(x=5\) m, and another second later, it will be at \(x=10\) m. We can write 5 m/s to the right as \(v=5\) m/s, whereas 5 m/s to the left would be \(v=-5\) m/s. The negative is used to indicate direction.</p>
+		<p>It is important to note that the use of "left" and "right" is somewhat arbitrary (for example, if we were standing on the opposite side of our number line and looking at the ball, then left would become right and right would become left). Instead of saying "to the right" it would be better to say that the ball is "moving in the +x direction", as the x position of the ball would be increasing, and likewise "to the left" become "moving in the -x direction". Now it doesn't matter what angle we are looking at the ball from, +x is always +x and -x is always -x.</p>
+		<p>Returning to our "5 m/s to the right situation", we can mathematically represent the position of our ball as a function of time: \[x(t)=vt,\quad v=5 \ m/s\] </p>
+		<p>Plugging in a value for t (measured in seconds), will output the ball's position at that time. Notice that if we plug in \(t=0\) s, we get \(x=0\) m, indicating that our ball starts at 0 m. A more general form of this equation would be: \[x(t)=vt+x_0\]</p>
+		<p>Now we can set v to our velocity, and \(x_0\) to our initial position. For example, if \(v=-3\) m/s and \(x_0=2\), then \(x(t)=-3t+2\).</p>
+		<br />
+
+		<h2>Acceleration</h2>
+		<p>Acceleration might be slightly harder to wrap your head around if you haven't had much exposure to the concept in a mathematical sense. Simply put, accleration is the change in velocity per unit time. This is similar to how velocity is the change in position per unit time. Acceleration can be written as \(a=\Delta v/\Delta t\), where a is acceleration, \(\Delta v\) is the change in velocity and \(\Delta t\) is change in time. If our velocity decreases by 3 m/s over a period of 2 seconds, then our acceleration would be \(a = {\Delta v \over \Delta t} = {-3\,m/s\over 2 s} = -1.5 \ m/s^2\). As this example illustrates, the units for acceleration is distance per time\(^2\), which is m/s^2 using SI units. We can rearrange this equation to get: 
+		\[\Delta v = a*\Delta t \Rightarrow v(t)=at+v_0 \]</p>
+		<p>I added in \(v_0\) to account for an initial velocity (what the velocity of our ball would be at t=0). This is remarkably similar to our equation for position as a function of time, \(x(t)=vt+x_0\).</p>
+		<br />
+
+		<h2>Putting It All Together</h2>
+		<p>At this point you're probably wondering how we can tie together position, velocity, and acceleration all in one equation. This requires some calculus (we are dealing with multiple quantities changing with time, so this would involve some integration). For simplicity, I'm just going to give you the equation: 
+		\[x(t)={1 \over 2}at^2+v_0t+x_0\]</p>
+		<p>Here, \(v_0\) and \(x_0\) are the initial velocity and initial position of our ball, and a is a constant acceleration applied to the ball. If we put our ball at \(x=2\) m with an initial velocity of -3 m/s and an acceleration of +4 m/s^2, we would get \(x(t)={4 \over 2}t^2-3t+2 = 2t^2-3t+2\). The motion being described has the ball starting at \(x=2\) and initially moving to the left. As time progresses, the ball will slow down until stopping entirely and then will begin speeding up in the +x-direction.</p>
+		<br/>
+		<p>[Add in some animations to make this clear]</p>
+		<br/>
+		
+		<p>The article on <a href="../UAM/index.html">Uniformly Accelerated Motion</a> (UAM) picks up here so I suggest you check that out if you want to learn more about these concepts.</p>
+	</div>
+</body>
+</html>

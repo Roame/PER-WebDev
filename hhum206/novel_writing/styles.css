@@ -1,0 +1,13 @@
+#storyCanvas {
+	display: block;
+	width: 750px;
+	height: 600px;
+	margin: auto;
+/*	background-color: lightgrey;*/
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}

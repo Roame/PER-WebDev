@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Physics</title>
+	<link rel="stylesheet" href = "/nav.css"/>
+	<link rel="stylesheet" href="../physics/body.css">
+
+	<script src="/technical/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $("#nav_div").load("/nav_chunk.html");
+      $("#fav_div").load("/fav_chunk.html"); 
+    });
+	</script>
+
+	<div id="fav_div"></div>
+</head>
+<body>
+	<div id="nav_div"></div>
+	<div id="spacer"></div>
+	<div id="info">
+		<h1>Welcome to the physics directory!</h1>
+		<br />
+		<p>Below are a list of the topics currently covered. More will be coming soon.</p>
+		<br />
+
+		<h2>Kinematics</h2>
+		<ul>
+			<li><a href="Articles/1DMotion/index.html">1-Dimensional Motion</a></li>
+			<li><a href="Articles/UAM/index.html">Uniformly Accelerated Motion</a></li>
+			<li><a href="Articles/Vectors/index.html">Vectors</a></li>
+			<li><a href="Articles/Projectiles/index.html">Projectiles</a></li>
+			<li><a href="Articles/Forces/index.html">Forces</a></li>
+			<li><a href="Articles/Friction/index.html">Friction</a></li>
+			<li>Rotational Motion</li>
+			<ul>
+				<li>Angular Position, Velocity, and Acceleration</li>
+				<li>Rotational Inertia</li>
+				<li>Torque</li>
+
+			</ul>
+			<li>Energy</li>
+			<ul>
+				<li>Work</li>
+				<li>Kinetic Energy</li>
+				<li>Potential Energy</li>
+				<li>Conservative and Nonconservative forces</li>
+			</ul>
+		</ul>
+	</div>
+</body>
+</html>

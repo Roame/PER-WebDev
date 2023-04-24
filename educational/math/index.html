@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Math</title>
+	<link rel="stylesheet" href = "/nav.css"/>
+	<link rel="stylesheet" href = "/body.css"/>
+	<link rel="stylesheet" href = "styles.css"/>
+
+	<script id="MathJax-script" async src="/technical/MathJax/tex-chtml.js"></script>
+
+	<script src="/technical/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $("#nav_div").load("/nav_chunk.html");
+      $("#fav_div").load("/fav_chunk.html"); 
+    });
+	</script>
+
+	<div id="fav_div"></div>
+</head>
+<body>
+	<div id="nav_div"></div>
+	<div id="spacer"></div>
+
+	<div id="info">
+		<p>Hello!</p>
+		<p>Just some stuff</p>
+		<h3>Equations and such</h3>
+		<ul>
+			<li>Central Limit Theorem (CLT): \( \frac{\sqrt{n}(\bar{X}_n-\mu)}{\sigma}  \xrightarrow[]{d} \mathcal{N}(0,1) \)</li>
+			<li>Schrodinger Eq: \( \hat{H}\ket{\Psi} = i\hbar\frac{\partial}{\partial t} \ket{\Psi}\)</li>
+			<li>Einstein-Field Eqs: \( G_{\mu\nu}+\Lambda g_{\mu\nu} = \frac{8 \pi G}{c^4} T_{\mu\nu}\)</li>
+			<li>Maxwell's Eqs: </li>
+				<ul>
+					<li>\(\nabla\cdot\textbf{E} = \frac{\rho}{\epsilon_0}\)</li>
+					<li>\(\nabla\cdot\textbf{B} = 0\)</li>
+					<li>\(\nabla\times\textbf{E} = -\frac{\partial\textbf{B}}{\partial t}\)</li>
+					<li>\(\nabla\times\textbf{B} = \mu_0\left(\textbf{J}+\epsilon_0 \frac{\partial\textbf{E}}{\partial t} \right) \)</li>
+				</ul>
+		</ul>
+		<h3>More visual stuff</h3>
+		<ul>
+			<li>Penrose diagrams:</li>
+				<ul>
+					<li><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Penrose_diagram.svg" style="object-fit: cover; height: 200px"/></li>
+				</ul>
+			<li>Lorenz attractor:</li>
+				<ul>
+					<li><img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Lorenz_attractor_yb.svg" style="object-fit: cover; height: 200px"/></li>
+				</ul>
+			<li>Feynman Diagrams:</li>
+				<ul>
+					<li><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Feynmann_Diagram_Gluon_Radiation.svg" style="object-fit: cover; height: 200px"/></li>
+				</ul>
+		</ul>
+	</div>
+</body>
+</html>

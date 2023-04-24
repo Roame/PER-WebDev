@@ -1,0 +1,7 @@
+iframe {
+	display: block;
+	width: 50%;
+	min-width: 700px;
+	height: 92vh;
+	margin: auto;
+}
