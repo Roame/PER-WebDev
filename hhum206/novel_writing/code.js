@@ -409,7 +409,7 @@ async function main(data){
 			scroll_pos = 0
 		} else {
 			scroll_pos += dy;
-		}
+		}combineContentChildren
 
 		for(let tb of tbs){
 			tb.y -= scroll_pos-pPos;
@@ -419,7 +419,7 @@ async function main(data){
 	}, 50);	
 }
 
-jQuery.get('http://localhost/hhum206/novel_writing/test.txt', main);
+jQuery.get('https://localhost/hhum206/novel_writing/test.txt', main);
 
 function scream(e){
 	dy = Math.abs(e.deltaY) > 5 ? 2*e.deltaY : 0;

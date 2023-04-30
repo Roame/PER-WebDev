@@ -5,7 +5,7 @@
 }
 
 nav {
-	overflow: hidden;
+	overflow: visible; /*Was hidden*/
 	height: 8vh;
 	min-height: 50px;
 	width: 100%;
@@ -15,7 +15,6 @@ nav {
 	
 	box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.8);
 	background-color: white;
-	opacity: 0.95;
 }
 
 .logo {
@@ -41,12 +40,14 @@ nav {
 
 .nav_links {
 	float: left;
-	height: 100%;
 	width: 50vw;
+	min-width: 300px;
+	height: 100%;
 }
 
-.nav_links li {
+.nav_links > li {
 	width: 33%;
+	min-width: 100px;
 	height: 100%;
 	float: left;
 	list-style: none;
@@ -70,6 +71,26 @@ nav {
 
 .nav_links a:hover {
 	background-color: lightgrey;
+}
+
+.dropdown:hover .dropdown_content {
+	display: block;
+}
+
+.dropdown_content {
+	display: none;
+	list-style: none;
+	box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.8);
+}
+.dropdown_content li {
+	height: 30px;
+	background-color: white;
+}
+
+.dropdown_wrapper {
+	padding: 0px 10px 10px 10px;
+	margin: 0px -10px -10px -10px;
+	overflow: hidden;
 }
 
 #spacer {

@@ -4,9 +4,9 @@
 
 	color: black;
 
-	background-image: url("media/banner.gif");
-	filter: blur(6px);
-	-webkit-filter: blur(6px);
+	background-image: url("/media/mountain_banner.jpg");
+	filter: blur(3px);
+	-webkit-filter: blur(3px);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -42,7 +42,7 @@
 	display: block;
 	float: left;
 	width: 33%;
-	height: auto;
+	height: min-content;
 	text-decoration: none;
 }
 
@@ -58,7 +58,20 @@
 	background-color: #F1F1F1;
 }
 
-.disp_block img {
+.block_img {
+	position: absolute;
+	left: 20%;
+
+	transform: translate(-50%, 0);
+
+	display: block;
+	margin: auto;
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.img_overlay {
 	display: block;
 
 	width: 75px;
