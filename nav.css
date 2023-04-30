@@ -82,6 +82,7 @@ nav {
 	list-style: none;
 	box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.8);
 }
+
 .dropdown_content li {
 	height: 30px;
 	background-color: white;

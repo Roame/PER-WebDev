@@ -409,7 +409,7 @@ async function main(data){
 			scroll_pos = 0
 		} else {
 			scroll_pos += dy;
-		}combineContentChildren
+		}
 
 		for(let tb of tbs){
 			tb.y -= scroll_pos-pPos;
