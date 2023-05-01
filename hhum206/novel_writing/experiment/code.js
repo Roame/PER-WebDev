@@ -327,7 +327,7 @@ function setMode(mode){
 }
 
 async function main(data){
-	storyChunks = parseData(data) 
+	storyChunks = parseData(data);
 	setMode(modes[0]);
 	
 	// Setting up the interface
