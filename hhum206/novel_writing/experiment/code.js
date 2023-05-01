@@ -1,3 +1,5 @@
+import { txt_data } from "./data.js";
+
 const canvas = document.getElementById("storyCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -191,13 +193,13 @@ class StoryChunk {
 }
 
 function parseData(data){
-	let lines = data.split("\r\n");
+	let lines = data.split("\n");
 	lines = lines.filter(v=>v!="");
 
 	let storyChunks = [];
 	let bunch = [];
 	for(let i=0; i<lines.length; i++){
-		line = lines[i];
+		let line = lines[i];
 		if((line[0] == "#" && i != 0) || i==lines.length-1){
 			if(i==lines.length-1) bunch.push(line);
 			storyChunks.push(new StoryChunk(bunch));
@@ -205,11 +207,12 @@ function parseData(data){
 		}
 		bunch.push(line);
 	}
+
 	return storyChunks;
 }
 
 function filterByName(chunks, character){
-	out = [];
+	let out = [];
 	for(let chunk of chunks){
 		if(chunk.char == character){
 			out.push(chunk);
@@ -270,7 +273,7 @@ function setMode(mode){
 	scroll_pos = 0;
 	if(mode == modes[0]){
 		overlayEnabled = true;	
-		tb_width = (canvas.width-100)/3;
+		let tb_width = (canvas.width-100)/3;
 		maxScroll = 1300;
 
 		// Earliest Tim
@@ -419,7 +422,8 @@ async function main(data){
 	}, 50);	
 }
 
-jQuery.get('https://scaredcrow.dev/hhum206/novel_writing/experiment/test.txt', main);
+main(txt_data)
+// jQuery.get('https://scaredcrow.dev/hhum206/novel_writing/experiment/test.txt', main);
 
 function scream(e){
 	dy = Math.abs(e.deltaY) > 5 ? 2*e.deltaY : 0;
