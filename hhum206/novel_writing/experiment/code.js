@@ -419,7 +419,7 @@ async function main(data){
 	}, 50);	
 }
 
-jQuery.get('https://localhost/hhum206/novel_writing/experiment/test.txt', main);
+jQuery.get('https://scaredcrow.dev/hhum206/novel_writing/experiment/test.txt', main);
 
 function scream(e){
 	dy = Math.abs(e.deltaY) > 5 ? 2*e.deltaY : 0;
