@@ -4,8 +4,7 @@
 	<meta charset="utf-8" />
 	<title>Study Guide!</title>
 	<link rel="stylesheet" href = "/nav.css"/>
-	<link rel="stylesheet" href = "/body.css"/>
-	<link rel="stylesheet" href = "styles.css"/>
+	<link rel="stylesheet" href = "./styles.css"/>
 
 	<script id="MathJax-script" async src="/technical/MathJax/tex-chtml.js"></script>
 
@@ -30,19 +29,248 @@
 
 		<h2>Table of Contents</h2>
 		<ul>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
+			<li><a href="#prob_distros">Probability Distributions</a></li>
+			<li><a href="#convergence">Convergence in Probability and Distribution</a></li>
+			<li><a href="#hypothesis">Hypothesis Testing</a></li>
 			<li><a href="#"></a></li>
 			<li><a href="#"></a></li>
 			<li><a href="#"></a></li>
 		</ul>
 		<br>
 
+
+		<a class="anchor" id="prob_distros"></a>
+		<h2>Probability Distributions</h2>
+		<h3>Discrete Distributions</h3>
+		<h4>Discrete Uniform</h4>
+		<ul>
+			<li>\(X \sim \text{U}[a, b]\)</li>
+			<li>\(f(x) = \frac{1}{b-a+1}, \quad x \in \{a, a+1, ..., b-1, b\}\)</li>
+			<li>\(E(X) = \frac{a+b}{2} \)</li>
+			<li>\(Var(X) = \frac{(b-a+1)^2-1}{12} \)</li>
+		</ul><br>
+
+		<h4>Bernoulli</h4>
+		<ul>
+			<li>\(X \sim B(p)\)</li>
+			<li>\(f(x) = \begin{cases}
+					p &\text{if } x = 1\\
+					1-p &\text{if } x = 0
+				\end{cases} \quad\quad x \in \{0, 1\}\)
+			</li>
+			<li>\(E(X) = p\)</li>
+			<li>\(Var(X) = p(1-p)\)</li>
+		</ul><br>
+
+		<h4>Binomial</h4>
+		<ul>
+			<li>\(X \sim B(n,p)\)</li>
+			<li>\(f(x) = {n \choose x}p^x(1-p)^{n-x}, \quad x \in \{0, 1, ..., n\}\)</li>
+			<li>\(E(X) = np \)</li>
+			<li>\(Var(X) = np(1-p) \)</li>
+		</ul><br>
+
+		<h4>Negative Binomial</h4>
+		Represents the number of failures before making r successes.
+		<ul>
+			<li>\(X \sim NB(r, p)\)</li>
+			<li>\(f(x) = {x+r-1 \choose x}p^r(1-p)^x, 
+			\quad x \in \{0,1,...\}\)</li>
+			<li>\(E(X) = \frac{r(1-p)}{p} \)</li>
+			<li>\(Var(X) = \frac{r(1-p)}{p^2} \)</li>
+		</ul><br>
+
+		<h4>Multinomial</h4>
+		Represents the number of successes drawn from k classes of outcomes, with n total trials
+		<ul>
+			<li>\(X \sim \text{Multinomial}(n,p_1,...,p_k)\)</li>
+			<li>\(f(\vec{x}) = \frac{n!}{x_1! \cdots x_k!}p_1^{x_1} \cdots p_k^{x_k}, \quad x_i \in \{1,...,n\} \)</li>
+			<ul><li>\( \sum_i x_i = n \) and \(\sum_i p_i = 1\)</li></ul>
+			<li>\(E(X_i) = np_i\)</li>
+			<li>\(Var(X_i) = np_i(1-p_i) \)</li>
+		</ul><br>
+
+		<h4>Geometric</h4>
+		Represents the number of bernoulli trials performed before getting a success.
+		<ul>
+			<li>\(X \sim Geo(p)\)</li>
+			<li>\(f(x) = (1-p)^xp, \quad x \in \{0, 1, ...\}\)</li>
+			<li>\(E(X) = \frac{1-p}{p} \)</li>
+			<li>\(Var(X) = \frac{1-p}{p^2} \)</li>
+		</ul><br>
+
+		<h4>Hypergeometric</h4>
+		Represents the number of successes obtained when making n draws from a population of size N, with number of successes K in that population.
+		<ul>
+			<li>\(X \sim \text{Hypergeometric}(N,K,n)\)</li>
+			<li>\(f(k) = \frac{{K \choose k}{N-K \choose n-k}}{N \choose n}, \quad k \in \{ \max{(0, n+K-N)}, ..., \min(n,K) \}\)</li>
+			<li>\(E(X) = \frac{nK}{N} \)</li>
+			<li>\(Var(X) = n \frac{K}{N} \frac{N-K}{N} \frac{N-n}{N-1} \)</li>
+		</ul><br>
+
+		<h4>Poisson</h4>
+		Represents the number of events that occur within a set interval of time if these events occur with a known constant mean and independently of the time since the last event.
+		<ul>
+			<li>\(X \sim \text{Pois}(\lambda)\)</li>
+			<li>\(f(x) = \frac{e^{-\lambda}\lambda^x}{x!}, x \in \{0, 1, ...\}\)</li>
+			<li>\(E(X) = \lambda \)</li>
+			<li>\(Var(X) = \lambda \)</li>
+		</ul><br>
+
+		<br>
+
+		<h3>Continuous Distributions</h3>
+		<h4>Continuous Uniform</h4>
+		<ul>
+			<li>\(X \sim \text{U}[a,b]\)</li>
+			<li>\(f(x) = \frac{1}{b-a}, \quad x \in [a,b]\)</li>
+			<li>\(E(X) = \frac{a+b}{2} \)</li>
+			<li>\(Var(X) = \frac{(b-a)^2}{12} \)</li>
+		</ul><br>
+
+		<h4>Exponential</h4>
+		<ul>
+			<li>\(X \sim \text{exp}(\lambda)\)</li>
+			<li>\(f(x) = \lambda e^{-\lambda x}, \quad x \in [0, \infty)\)</li>
+			<li>\(E(X) = \frac{1}{\lambda} \)</li>
+			<li>\(Var(X) = \frac{1}{\lambda^2} \)</li>
+		</ul><br>
+
+		<h4>Normal</h4>
+		<ul>
+			<li>\(X \sim N(\mu, \sigma^2)\)</li>
+			<li>\(f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}, \quad x \in (-\infty, \infty)\)</li>
+			<li>\(E(X) = \mu \)</li>
+			<li>\(Var(X) = \sigma^2 \)</li>
+		</ul><br>
+
+		<h4>T-distribution</h4>
+		Just know that it exists tbh.
+		<br><br>
+
+		<h4>Chi-Squared</h4>
+		<ul>
+			<li>\(X \sim \chi^2(k)\)</li>
+			<li>\(f(x) = \frac{1}{2^{k/2}\Gamma(k/2)}x^{k/2-1}e^{-x/2}, \quad x \in [0,\infty)\)</li>
+			<li>\(E(X) = k \)</li>
+			<li>\(Var(X) = 2k \)</li>
+		</ul><br>
+
+		<h4>Gamma</h4>
+		<ul>
+			<li>\(X \sim \text{Gamma}(\alpha, \beta)\)</li>
+			<li>\(f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}, \quad x \in (0, \infty) \)</li>
+			<li>\(E(X) = \alpha/\beta \)</li>
+			<li>\(Var(X) = \alpha/\beta^2 \)</li>
+			<li>Relations:</li>
+			<ul>
+				<li>If \(X_i\) are n iid RVs \(\sim \text{exp}(\lambda)\), then \(\sum_i X_i \sim \text{Gamma}(n, \lambda)\)</li>
+				<li>If \(\alpha = \nu/2\) and \(\beta=1/2\), then this is a \(\chi^2\) distribution with \(\nu\) degrees of freedom.</li>
+			</ul>
+			<li>Notes on the Gamma function</li>
+			<ul>
+				<li>\(\Gamma(x) = \int_0^\infty t^{x-1}e^{-x}dx\)</li>
+				<li>\(\Gamma(n) = (n-1)!\)</li>
+			</ul>
+		</ul><br>
+
+		<h4>Beta</h4>
+		<ul>
+			<li>\(X \sim \text{Beta}(\alpha,\beta) \quad \alpha,\beta>0\)</li>
+			<li>\(f(x) = \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1}(1-x)^{\beta-1}, \quad x \in [0,1] \text{ or } x \in (0,1)\)</li>
+			<li>\(E(X) = \frac{\alpha}{\alpha+\beta} \)</li>
+			<li>\(Var(X) = \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)} \)</li>
+		</ul><br>
+
+		<h4>Cauchy</h4>
+		<ul>
+			<li>\(X \sim \text{Cauchy}(x_0, \gamma)\)</li>
+			<li>\(f(x) = \frac{1}{\pi\gamma\left[ 1+\left(\frac{x-x_0}{\gamma} \right)^2 \right]}, \quad x \in (-\infty,\infty)\)</li>
+			<li>\(E(X) = \text{undefined}\)</li>
+			<li>\(Var(X) = \text{undefined}\)</li>
+		</ul><br>
+		<br>
+
+		<!--Declaring convergence macros-->
+		<div style="display: none;">
+			\(
+				\def\convp{{\,\xrightarrow[]{p}\,}}
+				\def\convd{{\,\xrightarrow[]{d}\,}}
+			\)
+
+		</div>
+
+		<a class="anchor" id="convergence"></a>
+		<h2>Convergence in Probability and Distribution</h2>
+		<p>For the sections below \(\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i\)</p><br>
+		
+		<h3>Convergence in Probability</h3>
+		<h4><u>Definition</u></h4>
+		<p>A quantity \(X_n\) converges in probability to \(X\) iff \(\lim_{n \to \infty}P(|X_n-X|>\epsilon) = 0 \quad\forall\, \epsilon >0\); written as \(X_n \xrightarrow[]{p} X\)</p><br>
+
+		<h4><u>Useful Theorems</u></h4>
+		<p><b>Continuous Mapping Theorem:</b> if \(X_n \convp X\) and a function \(g\) has a set of discontinuity points D s.t. \( P(X \in D)=0 \), then \(g(X_n)\convp g(X)\)</p>
+
+		<p><b>(Weak) Law of Large Numbers:</b> if \(X_1,...,X_n\) are iid with finite mean \(\mu\), then \( \bar{X}_n \convp \mu \)</p>
+
+		<p><b>Unnamed Theorem:</b> if \(X_n \convp X\) and \(Y_n \convp Y\), then \(X_n+Y_n \convp X+Y\)</p>
+
+		<p><b>Unnamed Theorem</b>: if \(X_n \convp X\) and \(a\) is a constant, then \(aX_n \convp aX\)</p><br>
+
+		<h4><u>Consistent Estimators</u></h4>
+		<p>\(\hat{\theta}_n\) is a consistent for \(\theta\) if \(\hat{\theta}_n \convp \theta\)</p>
+
+		<br><br>
+
+
+		<h3>Convergence in Distribution</h3>
+		<h4><u>Definition</u></h4>
+		<p>A quantity \(X_n\) converges in distribution to \(X\) iff \(\lim_{n\to\infty}F_{X_n}(x)=F_X(x)\) \(\forall\, x\) where \(F_X\) is continuous; written \(X_n \convd X\)</p><br>
+
+		<h4><u>Useful Theorems</u></h4>
+		<p><b>Continuous Mapping Theorem:</b> if \(X_n \convd X\) and a function \(g\) has a set of discontinuity points D s.t. \( P(X \in D)=0 \), then \(g(X_n)\convd g(X)\)</p>
+
+		<p><b>Central Limit Theorem (CLT):</b> if \(X_1,...,X_n\) are iid with finite mean \(\mu\) and variance \(\sigma^2\), then \(\sqrt{n}\left( \bar{X}_n-\mu\right) \convd N(0, \sigma^2)\) </p>
+
+		<p><b>Delta Method:</b> if \(\sqrt{n}\left( X_n-\theta \right) \convd N(0, \sigma^2) \) where \(\theta\) and \(\sigma^2\) are finite constants and \(g\) is any function s.t. \(g'(\theta) \,\exists\) and \(\neq 0\), then \(\sqrt{n}\left( g(X_n)-g(\theta) \right) \convd N(0, \left[ g'(\theta)\right]^2 \cdot \sigma^2) \)</p>
+
+		<p><b>Slutsky's Theorem:</b> if \(X_n \convd X\), \(Y_n \convp a\), and \(Z_n \convp b\) (where a and b are constants), then \(Y_n X_n + Z_n \convd aX+b \)</p>
+
+		<p><b>Unnamed Theorem:</b> if \(X_n \convp X\) then \(X_n \convd X\)</p>
+		<p><b>Unnamed Theorem:</b> if \(X_n \convd c\) (a constant) then \(X_n \convp c\)</p>
+		<br><br>
+
+		<a class="anchor" id="hypothesis"></a>
+		<h2>Hypothesis Testing</h2>
+		<p>General Approach</p>
+		<table border="1">
+			<tr>
+				<th colspan="2">Normally distributed</th>
+				<th colspan="2">Is not normally distributed</th>
+			</tr>
+			<tr>
+				<th>Variance is known</th>
+				<th>Variance is not known</th>
+				<th>Large Sample Size</th>
+				<th>Small Sample Size</th>
+			</tr>
+			<tr style="text-align:center;">
+				<td>Z-Test</td>
+				<td>T-Test</td>
+				<td>Large sample Z-Test</td>
+				<td>Find new pivotal quantity</td>
+			</tr>
+		</table>
+		<br>
+
+		<h3>Z-Test</h3>
+		
+
+		<br>
+
 		<h2>Fisher Information</h2>
 		<p>The score function: \(s(\theta) = \partial_{\theta}\log{(L(\theta))}\)</p>
 		<p>\(I(\theta) = E(s(\theta)^2)\)</p>
-		<h2>Test2</h2>
 
 		<div style="height: 1000px;"></div>
 		<h2>Welcome to math hell</h2>

@@ -1,0 +1,13 @@
+#container {
+	width: 500px;
+	height: 600px;
+	margin: auto;
+	padding-top: 20px;
+}
+
+#flash {
+	width: 400px;
+	height: 300px;
+	margin: auto;
+	background-color: lightgray;
+}
